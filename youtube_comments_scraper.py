@@ -121,11 +121,11 @@ def parse_comment(comment):
 
 
 if __name__ == "__main__":
-    url = "https://www.youtube.com/watch?v=kPH3Od-TUF0"
-    csv_file_name = './data/comments.csv'
+    YOUTUBE_URL = "https://www.youtube.com/watch?v=kPH3Od-TUF0"
+    OUTPUT_CSV_FILE = './data/comments.csv'
 
-    comments = scrape(url)
+    comments = scrape(YOUTUBE_URL)
     print("Number of comments: ", len(comments))
 
     df_comments = pd.DataFrame(comments)
-    df_comments.to_csv(csv_file_name, mode='a', index=True)
+    df_comments.to_csv(OUTPUT_CSV_FILE, mode='a', index=True)
